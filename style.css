@@ -1,8 +1,7 @@
 body {
     background-color: rgb(35, 93, 152);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.login-box {
-    display: flex;
-    
-}
