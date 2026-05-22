@@ -4,5 +4,20 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
+  },
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AoT-Eren-Yeager/SwiftLink-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AoT-Eren-Yeager/SwiftLink-Project/issues"
+  },
+  "homepage": "https://github.com/AoT-Eren-Yeager/SwiftLink-Project#readme",
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
