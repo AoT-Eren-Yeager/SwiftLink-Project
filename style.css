@@ -3,5 +3,50 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Тут отступы рамки и скругление рамки */
+.login-box {
+    padding: 10px;
+    border: 2px solid rgb(35, 93, 152);
+    box-shadow: 0px 12px 30px;
+    
+    border-radius: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* Здесь отступы внитри инпутов и округление плюс два инпута в ряд*/
+.login-box input{
+    
+    margin: 10px 0px;
+    padding: 12px 20px;
+   
+    border-radius: 20px;
+    width: 220px;
+}
+
+.login-box h1{
+    color: aqua;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-family: Arial, sans-serif;
+   
+}
+
+.login-box button {
+    
+    border-radius: 20px;
+    margin: 20px;
+    padding: 12px 0px;
+    width: 260px;
+
 }
 
