@@ -8,9 +8,7 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 4000;
 
-// Middleware
 app.use(express.json());
-app.use(express.static(__dirname));
 
 // Подключение к MongoDB
 mongoose.connect(process.env.MONGODB_URI)
@@ -23,14 +21,6 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true }
 });
 const User = mongoose.model('User', userSchema);
-
-// Страницы
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'login.html'));
-});
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'register.html'));
-});
 
 // Регистрация
 app.post('/api/register', async (req, res) => {
@@ -63,6 +53,16 @@ app.post('/api/login', async (req, res) => {
 
     const token = jwt.sign({ login }, process.env.JWT_SECRET, { expiresIn: '7d' });
     res.json({ token });
+});
+
+// Статические файлы и страницы — ПОСЛЕ маршрутов API
+app.use(express.static(__dirname));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'login.html'));
+});
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, 'register.html'));
 });
 
 app.listen(port, () => {
